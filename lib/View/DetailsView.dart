@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'Meals.dart';
+import '../Model/Meals.dart';
 import 'PayView.dart';
 
 

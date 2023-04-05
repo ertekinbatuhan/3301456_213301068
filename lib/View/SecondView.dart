@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'DetailsView.dart';
-import 'Meals.dart';
+import '../Model/Meals.dart';
 
 
 
