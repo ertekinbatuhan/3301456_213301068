@@ -36,7 +36,7 @@ class _DetailsState extends State<Details> {
             SizedBox(width: 200,
               height: 50,
               child: ElevatedButton(
-                child: Text("Sipariş Ver",),
+                child: Text("Siparis Ver",),
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.purple,
                     shape: const RoundedRectangleBorder(
