@@ -164,7 +164,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           bool controllerResult = formKey.currentState!.validate();
                           if ( controllerResult ) {
 
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => const SecondView()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const FoodsView()));
 
                           }
 

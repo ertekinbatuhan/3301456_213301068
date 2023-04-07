@@ -7,14 +7,14 @@ import '../Model/Meals.dart';
 
 
 
-class SecondView extends StatefulWidget {
-  const SecondView({Key? key}) : super(key: key);
+class FoodsView extends StatefulWidget {
+  const FoodsView({Key? key}) : super(key: key);
 
   @override
-  State<SecondView> createState() => _SecondViewState();
+  State<FoodsView> createState() => _FoodsViewState();
 }
 
-class _SecondViewState extends State<SecondView> {
+class _FoodsViewState extends State<FoodsView> {
 
   Future<List<Meals>>  getMeals() async {
 

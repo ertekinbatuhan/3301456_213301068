@@ -100,7 +100,7 @@ class _PayState extends State<Pay> {
                       label: "Evet",
                       textColor: Colors.red,
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SecondView()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => FoodsView()));
 
 
                       },
