@@ -116,7 +116,11 @@ class _FoodsViewState extends State<FoodsView> {
                         children: [
                           SizedBox(
                               width: 100,height: 100,
-                              child: Image.asset("images/${meal.meal_picture}" ,)),
+                              child: CircleAvatar(
+                                radius: 50,
+                                backgroundImage: AssetImage("images/${meal.meal_picture}"),
+                              )),
+                             // Image.asset("images/${meal.meal_picture}" ,)),
 
                           Column(
                             children: [
