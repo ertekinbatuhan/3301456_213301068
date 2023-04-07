@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-import 'ResultView.dart';
-import 'SecondView.dart';
+import 'resultView.dart';
+import 'foodsView.dart';
 
 
 class Pay extends StatefulWidget {

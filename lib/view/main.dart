@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'SecondView.dart';
+import 'foodsView.dart';
 
 
 void main() {
