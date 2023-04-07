@@ -18,7 +18,7 @@ class _PayState extends State<Pay> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(" Ödeme Sayfası  "),
+        title: Text(" Ödeme Sayfasi  "),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -38,7 +38,7 @@ class _PayState extends State<Pay> {
                   prefixIcon: Icon(Icons.credit_card),
 
 
-                  hintText: "Kart Numarası",
+                  hintText: "Kart Numarasi",
                   border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(15.0)))
               ),
             ),
@@ -85,7 +85,7 @@ class _PayState extends State<Pay> {
             padding: const EdgeInsets.only(top: 30.0),
             child: ElevatedButton.icon(
               icon : const Icon(Icons.lock,size: 15,),
-              label: Text("Satın Al"),
+              label: Text("Satin Al"),
               style: ElevatedButton.styleFrom(
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10.0))
@@ -95,7 +95,7 @@ class _PayState extends State<Pay> {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => Result()));
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text("Sipariş vermeye devam etmek istiyor musunuz ?"),
+                  SnackBar(content: Text("Siparis vermeye devam etmek istiyor musunuz ?"),
                     action: SnackBarAction(
                       label: "Evet",
                       textColor: Colors.red,

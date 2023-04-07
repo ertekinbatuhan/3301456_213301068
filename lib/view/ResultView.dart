@@ -25,10 +25,10 @@ class _ResultState extends State<Result> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Siparişiniz alınmıştır"),
+        title: Text("Siparisiniz Alinmistir"),
         actions: [
           ElevatedButton(
-            child: Text("Çıkış"),
+            child: Text("Cikis"),
             onPressed: () {
               Navigator.of(context).popUntil((route) => route.isFirst);
 
@@ -39,7 +39,7 @@ class _ResultState extends State<Result> {
       body: Column(
         children: [
           Image.asset("images/siparisicon.jpg" , height: 500, width: 500,),
-          Text("Sipariş numaranız : ${randomNumber}", style: TextStyle(
+          Text("Siparis numaraniz : ${randomNumber}", style: TextStyle(
               color: Colors.red,
               fontSize: 20.0
           ),),
