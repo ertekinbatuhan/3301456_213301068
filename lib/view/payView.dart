@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'resultView.dart';
 import 'foodsView.dart';
+import 'package:intl/intl.dart';
 
 
 class Pay extends StatefulWidget {
@@ -17,7 +18,14 @@ class Pay extends StatefulWidget {
 }
 
 class _PayState extends State<Pay> {
+  TextEditingController dateController = TextEditingController();
 
+
+  @override
+  void initState() {
+    super.initState();
+    dateController.text = "" ;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,15 +71,33 @@ class _PayState extends State<Pay> {
             ),
           ),
 
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(left: 50,right: 50),
             child: Center(
               child: TextField(
+                controller: dateController,
+
 
                 style: TextStyle(color: Colors.blue),
-                decoration: InputDecoration(hintText: "Son Kullanma Tarihi  ",
+                decoration: const InputDecoration(hintText: "Son Kullanma Tarihi  ",
                     prefixIcon: Icon(Icons.date_range),
                     border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(15.0)))),
+                readOnly: true,
+                  onTap: () async{
+                    DateTime? pickedDate = await  showDatePicker(context: context, initialDate: DateTime.now() ,firstDate: DateTime(2000), lastDate: DateTime(2101));
+                    if(pickedDate != null) {
+                      String formattedDate = DateFormat("yyyy/-MM-dd").format(pickedDate);
+                      setState(() {
+                        dateController.text = formattedDate.toString() ;
+
+                      });
+                    }else {
+                      print("not selected");
+                    }
+                  }
+
+
+
 
               ),
             ),

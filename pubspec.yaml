@@ -47,7 +47,7 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
   google_fonts: ^4.0.3
-  date_field: ^3.0.2
+  intl: ^0.17.0
 
 
 
