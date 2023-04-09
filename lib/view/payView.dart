@@ -1,19 +1,24 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:date_field/date_field.dart';
 
 import 'resultView.dart';
 import 'foodsView.dart';
 
 
 class Pay extends StatefulWidget {
-  const Pay({Key? key}) : super(key: key);
+   Pay({Key? key}) : super(key: key);
+
+
 
   @override
   State<Pay> createState() => _PayState();
 }
 
 class _PayState extends State<Pay> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,6 +67,7 @@ class _PayState extends State<Pay> {
             padding: EdgeInsets.only(left: 50,right: 50),
             child: Center(
               child: TextField(
+
                 style: TextStyle(color: Colors.blue),
                 decoration: InputDecoration(hintText: "Son Kullanma Tarihi  ",
                     prefixIcon: Icon(Icons.date_range),

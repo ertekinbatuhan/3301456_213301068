@@ -66,8 +66,8 @@ class _FoodsViewState extends State<FoodsView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: search ? TextField(decoration: InputDecoration(hintText:"Aramak istediğinizi yazınız"),)
-            : Text("Yemekler"),
+        title: search ? const TextField(decoration: InputDecoration(hintText:"Aramak istediğinizi yazınız"),)
+            : const Text("Yemekler"),
 
 
         actions: [
@@ -85,7 +85,7 @@ class _FoodsViewState extends State<FoodsView> {
           )
 
               : IconButton(
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
             onPressed: () {
               setState(() {
                 search = true ;

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'foodsView.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+
 
 
 void main() {
@@ -88,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
 
         appBar: AppBar(
-          title: Text(widget.title),
+          title: Text(widget.title,style: GoogleFonts.acme(),),
         ),
         body: Column(
 
@@ -155,9 +158,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: SizedBox(
                       width: 300,
                       child: ElevatedButton.icon(
-                        icon: Icon(Icons.keyboard_arrow_right,size: 18,),
+                        icon: const Icon(Icons.keyboard_arrow_right,size: 18,),
                         label: const Text("Giriş Yap"),
                         style: ElevatedButton.styleFrom(
+
                             shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.all(Radius.circular(20.0)),
 

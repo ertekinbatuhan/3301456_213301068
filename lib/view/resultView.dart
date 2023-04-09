@@ -28,7 +28,7 @@ class _ResultState extends State<Result> {
         title: Text("Siparisiniz Alinmistir"),
         actions: [
           ElevatedButton(
-            child: Text("Cikis"),
+            child: const Text("Cikis"),
             onPressed: () {
               Navigator.of(context).popUntil((route) => route.isFirst);
 
@@ -39,7 +39,7 @@ class _ResultState extends State<Result> {
       body: Column(
         children: [
           Image.asset("images/siparisicon.jpg" , height: 500, width: 500,),
-          Text("Siparis numaraniz : ${randomNumber}", style: TextStyle(
+          Text("Siparis numaraniz : ${randomNumber}", style: const TextStyle(
               color: Colors.red,
               fontSize: 20.0
           ),),
