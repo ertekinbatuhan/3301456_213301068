@@ -116,6 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           return "Kullanıcı adı yanlış " ;
 
                         }
+                        return null ;
 
                       },
                     ),
@@ -142,6 +143,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           return "Yanlış şifre" ;
 
                         }
+                        return null ;
+
 
                       },
                     ),
