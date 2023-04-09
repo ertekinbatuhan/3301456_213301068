@@ -53,7 +53,8 @@ class _MyHomePageState extends State<MyHomePage> {
           child: ListView(
             padding: EdgeInsets.zero,
             children: const [
-              DrawerHeader(child: Center(child: Text("Follow me", style: TextStyle(fontSize: 20.0),)),
+
+              DrawerHeader(child: Center(child: Text("Follow me", style: TextStyle(fontSize: 25.0),)),
                 decoration: BoxDecoration(color: Colors.purple),),
               ListTile(
                 leading: CircleAvatar(
