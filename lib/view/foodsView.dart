@@ -136,7 +136,9 @@ class _FoodsViewState extends State<FoodsView> {
                               )
 
                             ],
-                          )
+                          ),
+                          const Spacer(),
+                          Icon(Icons.arrow_right)
                         ],
                       )
                   ),
