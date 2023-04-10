@@ -27,8 +27,8 @@ class _ResultState extends State<Result> {
       appBar: AppBar(
         title: Text("Siparisiniz Alinmistir"),
         actions: [
-          ElevatedButton(
-            child: const Text("Cikis"),
+         IconButton(
+           icon: const Icon(Icons.exit_to_app),
             onPressed: () {
               Navigator.of(context).popUntil((route) => route.isFirst);
 
