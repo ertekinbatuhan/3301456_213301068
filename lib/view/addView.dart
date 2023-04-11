@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../View/main.dart';
+
+import '../main.dart';
 
 class Adduserinfo extends StatefulWidget {
 

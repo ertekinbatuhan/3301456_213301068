@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:yemek_app/view/addView.dart';
 import 'package:yemek_app/view/userinfoView.dart';
 
-import 'foodsView.dart';
+
+import 'view/addView.dart';
+import 'view/foodsView.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
