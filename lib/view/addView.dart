@@ -33,7 +33,7 @@ class _AdduserinfoState extends State<Adduserinfo> {
       shared.setString("customerName", name);
       shared.setString("surName", surName);
       shared.setString("address", address);
-      // burdan sonrası sayfa geçişi
+
     Navigator.push(context, MaterialPageRoute(builder: (context) => const MyApp()));
 
 
