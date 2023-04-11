@@ -27,9 +27,12 @@ class _AdduserinfoState extends State<Adduserinfo> {
     var address = customerAddress.text;
 
 
+    
+
     if ( name != "" && surName != "" && address != "") {
       //await tanımlamanın bitmesini bekliyor
       var shared = await SharedPreferences.getInstance();
+
 
       shared.setString("customerName", name);
       shared.setString("surName", surName);
