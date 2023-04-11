@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:yemek_app/view/addView.dart';
+import 'package:yemek_app/view/userinfoView.dart';
 
 import 'foodsView.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -52,11 +54,11 @@ class _MyHomePageState extends State<MyHomePage> {
         drawer: Drawer(
           child: ListView(
             padding: EdgeInsets.zero,
-            children: const [
+            children: [
 
-              DrawerHeader(child: Center(child: Text("Follow me", style: TextStyle(fontSize: 25.0),)),
+              const DrawerHeader(child: Center(child: Text("Follow me", style: TextStyle(fontSize: 25.0),)),
                 decoration: BoxDecoration(color: Colors.purple),),
-              ListTile(
+              const ListTile(
                 leading: CircleAvatar(
                   backgroundImage: AssetImage("icons/github.jpg"),
                 ),
@@ -64,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 subtitle: Text("github.com/ertekinbatuhan",style: TextStyle(color: Colors.black),),
 
               ),
-              ListTile(
+              const ListTile(
                 leading: CircleAvatar(
                   backgroundImage: AssetImage("icons/linkedin.jpg"),
                 ),
@@ -72,19 +74,30 @@ class _MyHomePageState extends State<MyHomePage> {
                 subtitle: Text("Batuhan Berk Ertekin",style: TextStyle(color: Colors.black),)
                 ,
               ),
-              ListTile(
+              const ListTile(
                 leading: CircleAvatar(
                   backgroundImage: AssetImage("icons/instagram.jpg") ,
                 ),
                 title: Text("Instagram"),
                 subtitle: Text("berk.btuhan",style: TextStyle(color: Colors.black),),
               ),
-              ListTile(
+              const ListTile(
                 leading: CircleAvatar(
                   backgroundImage: AssetImage("icons/gmail.jpg"),
                 ),
                 title: Text("E-mail"),
                 subtitle: Text("batuhanertekinn@gmail.com",style: TextStyle(color: Colors.black),),
+              ),
+              ListTile(
+                leading: const CircleAvatar(
+                  backgroundImage: AssetImage("icons/add.png"),
+                ),
+                title: const Text("Kullanıcı Bilgileri"),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => UserInfo()));
+
+
+                },
               )
 
             ],
@@ -184,8 +197,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   SizedBox(
                     width: 300,
                     child: ElevatedButton.icon(
-                      icon: Icon(Icons.keyboard_arrow_right,size: 18,),
-                      label: Text("Kayıt Ol"),
+                      icon: const Icon(Icons.keyboard_arrow_right,size: 18,),
+                      label: const Text("Kayıt Ol"),
 
 
 
@@ -197,7 +210,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       onPressed: () {
                         ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text("Kayıt ol butonu daha sonra aktif olacak."))
+                            const SnackBar(content: Text("Kayıt ol butonu daha sonra aktif olacak."))
                         );
 
 
@@ -209,6 +222,26 @@ class _MyHomePageState extends State<MyHomePage> {
 
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: SizedBox(width: 300,
+                      child: ElevatedButton.icon(
+                        label: const Text("Adres Ekleyiniz"),
+                        icon: const Icon(Icons.add),
+                        style: ElevatedButton.styleFrom(
+                            shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(Radius.circular(20.0))
+                            )
+                        ),
+
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Adduserinfo()));
+
+
+                        },
+                      ),
+                    ),
+                  )
 
                 ],
               ),

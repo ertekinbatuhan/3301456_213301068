@@ -2,6 +2,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 class Result extends StatefulWidget {
@@ -18,6 +19,17 @@ class _ResultState extends State<Result> {
   var random =  Random();
 
   late var randomNumber = min + random.nextInt((max - min))  ;
+  Future<void> cikisYap()  async {
+
+    var shared = await SharedPreferences.getInstance();
+
+    shared.remove("customerName");
+    shared.remove("surName");
+    shared.remove("address");
+
+
+  }
+
 
 
 
@@ -30,6 +42,7 @@ class _ResultState extends State<Result> {
          IconButton(
            icon: const Icon(Icons.exit_to_app),
             onPressed: () {
+             cikisYap();
               Navigator.of(context).popUntil((route) => route.isFirst);
 
             },
@@ -39,7 +52,7 @@ class _ResultState extends State<Result> {
       body: Column(
         children: [
           Image.asset("images/siparisicon.jpg" , height: 500, width: 500,),
-          Text("Siparis numaraniz : ${randomNumber}", style: const TextStyle(
+          Text("Siparis numaraniz : $randomNumber", style: const TextStyle(
               color: Colors.red,
               fontSize: 20.0
           ),),
