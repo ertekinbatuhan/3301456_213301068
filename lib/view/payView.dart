@@ -9,7 +9,7 @@ import 'package:intl/intl.dart';
 
 
 class Pay extends StatefulWidget {
-   Pay({Key? key}) : super(key: key);
+   const Pay({Key? key}) : super(key: key);
 
 
 
