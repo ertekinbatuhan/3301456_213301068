@@ -13,12 +13,12 @@ class Result extends StatefulWidget {
 }
 
 class _ResultState extends State<Result> {
-  late int min = 1 ;
-  late  int max = 99999 ;
+    int min = 1 ;
+    int max = 99999 ;
 
   var random =  Random();
 
-  late var randomNumber = min + random.nextInt((max - min))  ;
+ late var randomNumber = min + random.nextInt((max - min))  ;
   Future<void> cikisYap()  async {
 
     var shared = await SharedPreferences.getInstance();
