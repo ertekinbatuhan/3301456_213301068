@@ -183,6 +183,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             )
                         ),
                         onPressed: () {
+                          //her şey null ise true gelir.
                           bool controllerResult = formKey.currentState!.validate();
                           if ( controllerResult ) {
 
