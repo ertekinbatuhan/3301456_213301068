@@ -42,6 +42,9 @@ class _AdduserinfoState extends State<Adduserinfo> {
 
 
     } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("İsim && Soyad && Adresi boş bırakmayınız"))
+      );
 
     }
 
