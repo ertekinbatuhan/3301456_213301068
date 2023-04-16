@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yemek_app/view/registerView.dart';
 import 'package:yemek_app/view/userinfoView.dart';
 
 
@@ -211,9 +212,12 @@ class _MyHomePageState extends State<MyHomePage> {
                           )
                       ),
                       onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text("Kayıt ol butonu daha sonra aktif olacak."))
-                        );
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const Register()));
+                       // ScaffoldMessenger.of(context).showSnackBar(
+                          // const SnackBar(content: Text("Kayıt ol butonu daha sonra aktif olacak."))
+
+
+                       // );
 
 
 
@@ -228,7 +232,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: const EdgeInsets.all(10.0),
                     child: SizedBox(width: 300,
                       child: ElevatedButton.icon(
-                        label: const Text("Adres Ekleyiniz"),
+                        label: const Text("Bilgi Ekle"),
                         icon: const Icon(Icons.add),
                         style: ElevatedButton.styleFrom(
                             shape: const RoundedRectangleBorder(
