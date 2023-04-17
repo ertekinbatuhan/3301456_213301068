@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 
 
-import 'resultView.dart';
-import 'foodsView.dart';
+import 'resultview.dart';
+import 'foodsiew.dart';
 import 'package:intl/intl.dart';
 
 
@@ -31,7 +31,7 @@ class _PayState extends State<Pay> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(" Ödeme Sayfasi  "),
+        title: Text(" Ödeme Sayfası  "),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
