@@ -125,7 +125,7 @@ class _MealsViewState extends State<MealsView> {
                       child:Row(
                         children: [
                           SizedBox(
-                              width: 100,height: 100,
+                              width: 80,height: 100,
                               child: CircleAvatar(
                                 radius: 50,
                                 backgroundImage: AssetImage("images/${meal.yemek_resim}"),
