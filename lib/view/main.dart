@@ -5,7 +5,6 @@ import 'package:yemek_app/view/userinfoview.dart';
 
 
 import 'addview.dart';
-import 'mealsview.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
@@ -242,8 +241,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
 
                         onPressed: () {
-                        //  Navigator.push(context, MaterialPageRoute(builder: (context) => Adduserinfo()));
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => KategorilerView()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Adduserinfo()));
+
 
 
                         },
