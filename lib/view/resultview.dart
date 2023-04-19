@@ -37,7 +37,7 @@ class _ResultState extends State<Result> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Siparisiniz Alinmistir"),
+        title: Text("Siparisiniz Alınmıştır"),
         actions: [
          IconButton(
            icon: const Icon(Icons.exit_to_app),
@@ -51,10 +51,11 @@ class _ResultState extends State<Result> {
       ),
       body: Column(
         children: [
-          Image.asset("images/siparisicon.jpg" , height: 500, width: 500,),
-          Text("Siparis numaraniz : $randomNumber", style: const TextStyle(
-              color: Colors.red,
-              fontSize: 20.0
+          Image.asset("images/order.png" , height: 500, width: 500,),
+          Text("Sipariş numaranız : $randomNumber", style: const TextStyle(
+              color: Colors.orange,
+              fontWeight: FontWeight.bold,
+              fontSize: 22.0
           ),),
 
 

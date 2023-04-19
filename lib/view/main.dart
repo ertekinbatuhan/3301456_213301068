@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:yemek_app/view/kategorilerview.dart';
 import 'package:yemek_app/view/registerview.dart';
 import 'package:yemek_app/view/userinfoview.dart';
 
 
 import 'addview.dart';
-import 'foodsiew.dart';
+import 'mealsview.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       title: 'Foods App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.orange,
       ),
       home: const MyHomePage(title: 'Hoşgeldiniz'),
     );
@@ -59,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
 
               const DrawerHeader(child: Center(child: Text("Follow me", style: TextStyle(fontSize: 25.0),)),
-                decoration: BoxDecoration(color: Colors.purple),),
+                decoration: BoxDecoration(color: Colors.orange),),
               const ListTile(
                 leading: CircleAvatar(
                   backgroundImage: AssetImage("icons/github.jpg"),
@@ -112,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Column(
 
           children: [
-            Image.asset("images/login.png",width: 500, height: 250,),
+            Image.asset("images/team.png",width: 500, height: 250,),
             Form(
               key: formKey,
               child: Column(
@@ -188,7 +189,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           bool controllerResult = formKey.currentState!.validate();
                           if ( controllerResult ) {
 
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => const FoodsView()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const KategorilerView()));
 
                           }
 
@@ -241,7 +242,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
 
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => Adduserinfo()));
+                        //  Navigator.push(context, MaterialPageRoute(builder: (context) => Adduserinfo()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => KategorilerView()));
 
 
                         },

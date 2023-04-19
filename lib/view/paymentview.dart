@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 
 import 'resultview.dart';
-import 'foodsiew.dart';
+
 import 'package:intl/intl.dart';
 
 
@@ -126,19 +126,21 @@ class _PayState extends State<Pay> {
 
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => Result()));
-                ScaffoldMessenger.of(context).showSnackBar(
+              /*  ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text("Siparis vermeye devam etmek istiyor musunuz ?"),
                     action: SnackBarAction(
                       label: "Evet",
                       textColor: Colors.red,
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => FoodsView()));
+                      //  Navigator.push(context, MaterialPageRoute(builder: (context) => FoodsView()));
 
 
                       },
                     ),),
 
                 );
+
+               */
 
 
               },

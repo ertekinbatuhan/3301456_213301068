@@ -9,7 +9,7 @@ import 'paymentview.dart';
 
 class Details extends StatefulWidget {
 
-  Meals meals ;
+  Yemekler meals ;
 
   Details({required this.meals});
 
@@ -23,7 +23,7 @@ class _DetailsState extends State<Details> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Yemek :  ${widget.meals.meal_name}"),
+        title: Text(widget.meals.yemek_isim,style: TextStyle(fontSize: 30.0),),
 
 
       ),
@@ -31,15 +31,15 @@ class _DetailsState extends State<Details> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Image.asset("images/${widget.meals.meal_picture}",width: 500,),
-            Text("${widget.meals.meal_price}\u{20BA}", style: TextStyle(color: Colors.purple,fontSize: 50), ),
+            Image.asset("images/${widget.meals.yemek_resim}",width: 500,),
+            Text("${widget.meals.yemek_fiyat}\u{20BA}", style: TextStyle(color: Colors.orange,fontSize: 50), ),
 
             SizedBox(width: 200,
               height: 50,
               child: ElevatedButton(
                 child: Text("Siparis Ver",),
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.purple,
+                    backgroundColor: Colors.amberAccent,
                     shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20.0))
 

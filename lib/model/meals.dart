@@ -1,15 +1,15 @@
 
-class Meals {
 
-  int? meal_id ;
-  String? meal_name ;
-  double? meal_price;
-  String? meal_picture ;
+import 'kategoriler.dart';
 
-  Meals({this.meal_id , this.meal_name , this.meal_price , this.meal_picture});
+class Yemekler {
 
+  int yemek_id ;
+  String yemek_isim ;
+  int yemek_fiyat;
+  String yemek_resim ;
+  Kategoriler kategori ;
 
-
-
-
+  Yemekler({required this.yemek_id, required this.yemek_isim, required this.yemek_fiyat, required this.yemek_resim,
+    required this.kategori});
 }
