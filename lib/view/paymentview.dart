@@ -1,159 +1,116 @@
-
-
 import 'package:flutter/material.dart';
-
-
-import 'resultview.dart';
-
-import 'package:intl/intl.dart';
+import 'package:flutter_credit_card/credit_card_form.dart';
+import 'package:flutter_credit_card/credit_card_model.dart';
+import 'package:flutter_credit_card/flutter_credit_card.dart';
+import 'package:yemek_app/view/resultview.dart';
 
 
 class Pay extends StatefulWidget {
-   const Pay({Key? key}) : super(key: key);
-
-
+  const Pay({Key? key}) : super(key: key);
 
   @override
-  State<Pay> createState() => _PayState();
+  _PayState createState() => _PayState();
 }
 
 class _PayState extends State<Pay> {
-  TextEditingController dateController = TextEditingController();
-
-
-  @override
-  void initState() {
-    super.initState();
-    dateController.text = "" ;
-  }
-
+  String cardNumber = '';
+  String expiryDate= '';
+  String cardHolderName = '';
+  String cvvCode= '';
+  bool isCvvFocused = false;
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(" Ödeme Sayfası  "),
+        automaticallyImplyLeading: false,
+        title: const Text('Ödeme Sayfası'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
+      resizeToAvoidBottomInset: true,
+      body: SafeArea(
+        child: Column(
+          children: [
+            CreditCardWidget(
+              cardNumber: cardNumber,
+              expiryDate: expiryDate,
+              cardHolderName: cardHolderName,
+              cvvCode: cvvCode,
+              showBackView: isCvvFocused,
+              obscureCardNumber: true,
+              obscureCardCvv: true, onCreditCardWidgetChange: (CreditCardBrand ) {  },),
+            Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      CreditCardForm(cardNumber: cardNumber,
+                        expiryDate: expiryDate,
+                        cardHolderName: cardHolderName,
+                        cvvCode: cvvCode,
+                        onCreditCardModelChange: onCreditCardModelChange,
+                        themeColor: Colors.blue,
+                        formKey: formKey,
+                        cardNumberDecoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Numara',
+                            hintText: 'xxxx xxxx xxxx xxxx'
+                        ),
+                        expiryDateDecoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Son Kullanma',
+                            hintText: 'xx/xx'
+                        ),
+                        cvvCodeDecoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'CVV',
+                            hintText: 'xxx'
+                        ),
+                        cardHolderDecoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'Kart Sahibi',
+                        ),
+                      ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            backgroundColor: Colors.orange
 
-          Image.asset("icons/credit.png",width: 200,height: 200,),
-
-          const Padding(
-            padding: EdgeInsets.only(bottom: 40.0,right: 10.0,left: 10.0),
-            child: TextField(
-              style: TextStyle(color: Colors.blue),
-              keyboardType: TextInputType.number,
-
-
-              decoration: InputDecoration(
-
-                  prefixIcon: Icon(Icons.credit_card),
-
-
-                  hintText: "Kart Numarasi",
-                  border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(15.0)))
-              ),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(bottom: 40.0,left: 10.0,right: 10.0),
-            child: TextField(
-
-              style: TextStyle(color: Colors.blue),
-              decoration: InputDecoration(
-
-
-                  hintText: "Kart Üzerindeki İsim",
-                  prefixIcon: Icon(Icons.add_circle),
-                  border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(15.0)))
-              ),
-            ),
-          ),
-
-          Padding(
-            padding: EdgeInsets.only(left: 50,right: 50),
-            child: Center(
-              child: TextField(
-                controller: dateController,
-
-
-                style: TextStyle(color: Colors.blue),
-                decoration: const InputDecoration(hintText: "Son Kullanma Tarihi  ",
-                    prefixIcon: Icon(Icons.date_range),
-                    border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(15.0)))),
-                readOnly: true,
-                  onTap: () async{
-                    DateTime? pickedDate = await  showDatePicker(context: context, initialDate: DateTime.now() ,firstDate: DateTime(2000), lastDate: DateTime(2101));
-                    if(pickedDate != null) {
-                      String formattedDate = DateFormat("yyyy/-MM-dd").format(pickedDate);
-                      setState(() {
-                        dateController.text = formattedDate.toString() ;
-
-                      });
-                    }else {
-                      print("not selected");
-                    }
-                  }
-
-
-
-
-              ),
-            ),
-          ),
-
-          const Padding(
-            padding: EdgeInsets.only(right: 50,left: 50,top: 30),
-            child: TextField(
-              style: TextStyle(color: Colors.blue),
-              decoration: InputDecoration(hintText: "CVC",
-                  prefixIcon: Icon(Icons.security),
-                  border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(15.0)))),
-            ),
-          ),
-
-          Padding(
-            padding: const EdgeInsets.only(top: 30.0),
-            child: ElevatedButton.icon(
-              icon : const Icon(Icons.lock,size: 15,),
-              label: Text("Satin Al"),
-              style: ElevatedButton.styleFrom(
-                  shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0))
-                  )
-              ),
-
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Result()));
-              /*  ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text("Siparis vermeye devam etmek istiyor musunuz ?"),
-                    action: SnackBarAction(
-                      label: "Evet",
-                      textColor: Colors.red,
-                      onPressed: () {
-                      //  Navigator.push(context, MaterialPageRoute(builder: (context) => FoodsView()));
+                        ),
+                        child: Container(
+                          margin: const EdgeInsets.all(8.0),
+                          child: const Text(
+                            'Satın Al',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'halter',
+                              fontSize: 14,
+                              package: 'flutter_credit_card',
+                            ),
+                          ),
+                        ),
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Result()));
 
 
-                      },
-                    ),),
-
-                );
-
-               */
-
-
-              },
-            ),
-          )
-
-
-
-        ],
+                        },)
+                    ],
+                  ),
+                )),
+          ],
+        ),
       ),
-
-
-
     );
+  }
+
+  void onCreditCardModelChange(CreditCardModel creditCardModel){
+    setState(() {
+      cardNumber = creditCardModel.cardNumber;
+      expiryDate = creditCardModel.expiryDate;
+      cardHolderName = creditCardModel.cardHolderName;
+      cvvCode = creditCardModel.cvvCode;
+      isCvvFocused = creditCardModel.isCvvFocused;
+    });
   }
 }
