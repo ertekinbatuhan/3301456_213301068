@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:yemek_app/model/kategoriler.dart';
-import 'package:yemek_app/model/mealsdao.dart';
+import 'package:yemek_app/services/mealsdao.dart';
 
 import 'detailsview.dart';
 
@@ -70,6 +70,7 @@ class _MealsViewState extends State<MealsView> {
   }
 
   bool search = false ;
+  bool heart = false ;
 
 
   @override
@@ -120,6 +121,7 @@ class _MealsViewState extends State<MealsView> {
                 return GestureDetector(
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => Details(meals: meal )));
+
                   },
                   child: Card(
                       child:Row(
@@ -147,8 +149,11 @@ class _MealsViewState extends State<MealsView> {
 
                             ],
                           ),
-                          const Spacer(),
-                          Icon(Icons.arrow_right)
+                         const  Spacer(),
+
+
+                          //const Spacer(),
+                        const  Icon(Icons.arrow_right),
                         ],
                       )
                   ),

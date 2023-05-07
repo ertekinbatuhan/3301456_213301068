@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:yemek_app/model/kategorilerdao.dart';
+import 'package:yemek_app/services/kategorilerdao.dart';
 import 'package:yemek_app/view/mealsview.dart';
 
 import '../model/kategoriler.dart';

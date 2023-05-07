@@ -1,5 +1,5 @@
 
-import 'package:yemek_app/model/databasehelper.dart';
+import 'package:yemek_app/services/databasehelper.dart';
 import 'package:yemek_app/model/kategoriler.dart';
 
 class KategorilerDao{

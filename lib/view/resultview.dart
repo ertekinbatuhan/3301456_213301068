@@ -15,10 +15,17 @@ class Result extends StatefulWidget {
 class _ResultState extends State<Result> {
     int min = 1 ;
     int max = 99999 ;
+    
+    int minMinute = 10 ;
+    int maxMinute = 70 ;
+    
+    
 
   var random =  Random();
 
  late var randomNumber = min + random.nextInt((max - min))  ;
+ late var randomMinute = min + random.nextInt(( maxMinute - minMinute)) ;
+ 
   Future<void> cikisYap()  async {
 
     var shared = await SharedPreferences.getInstance();
@@ -37,7 +44,7 @@ class _ResultState extends State<Result> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Siparisiniz Alınmıştır"),
+        title: const Text("Siparisiniz Alınmıştır"),
         actions: [
          IconButton(
            icon: const Icon(Icons.exit_to_app),
@@ -51,12 +58,21 @@ class _ResultState extends State<Result> {
       ),
       body: Column(
         children: [
-          Image.asset("images/order.png" , height: 500, width: 500,),
+          Image.asset("icons/courier.png" , height: 500, width: 500,),
           Text("Sipariş numaranız : $randomNumber", style: const TextStyle(
-              color: Colors.orange,
+              color: Colors.purple,
               fontWeight: FontWeight.bold,
               fontSize: 22.0
           ),),
+
+          Padding(
+            padding: const EdgeInsets.only(top: 20.0),
+            child: Text("Tahmini Bekleme Süresi : $randomMinute dakika " , style:  const TextStyle(
+              color: Colors.purple ,
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold
+            ),),
+          )
 
 
         ],
