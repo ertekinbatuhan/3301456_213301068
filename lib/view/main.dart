@@ -113,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 title: const Text("Kullanıcı Bilgileri"),
                 onTap: () {
                  // Navigator.push(context, MaterialPageRoute(builder: (context) => UserInfo()));
-               //   Navigator.push(context, MaterialPageRoute(builder: (context) => UserInfo())) ;
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => UserInfoo())) ;
 
 
                 },
@@ -138,21 +138,21 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: const EdgeInsets.all(10.0),
                     child: TextFormField(
                       controller: userEmail,
-                      decoration:  const InputDecoration(hintText: "Kullanıcı adı giriniz " ,
+                      decoration:  const InputDecoration(hintText: "E posta giriniz" ,
                           prefixIcon: Icon(Icons.account_circle),
                           filled: true ,
                           border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20.0)))),
                       validator: (input){
 
-                        if (input!.isEmpty) {
-                          return "Kullanıcı adı giriniz " ;
+                      //  if (input!.isEmpty) {
+                        //  return "Kullanıcı adı giriniz " ;
 
-                        }
-                        if (input != "batuhan") {
-                          return "Kullanıcı adı yanlış " ;
+                      //  }
+                       // if (input != "batuhan") {
+                        //  return "Kullanıcı adı yanlış " ;
 
-                        }
-                        return null ;
+                      //  }
+                       // return null ;
 
                       },
                     ),

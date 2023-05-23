@@ -3,14 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class UserInfo extends StatefulWidget {
-  const UserInfo({Key? key}) : super(key: key);
+class UserInfoo extends StatefulWidget {
+  const UserInfoo({Key? key}) : super(key: key);
 
   @override
-  State<UserInfo> createState() => _UserInfoState();
+  State<UserInfoo> createState() => _UserInfooState();
 }
 
-class _UserInfoState extends State<UserInfo> {
+class _UserInfooState extends State<UserInfoo> {
 
   late String getName;
   late String getAddress;
