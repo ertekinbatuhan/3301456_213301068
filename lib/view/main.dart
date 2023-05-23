@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
   var  formKey = GlobalKey<FormState>();
-  var userName = TextEditingController();
+  var userEmail = TextEditingController();
   var userPassword = TextEditingController();
 
   AuthService _authService = AuthService();
@@ -137,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: TextFormField(
-                      controller: userName,
+                      controller: userEmail,
                       decoration:  const InputDecoration(hintText: "Kullanıcı adı giriniz " ,
                           prefixIcon: Icon(Icons.account_circle),
                           filled: true ,
@@ -203,7 +203,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         onPressed: () {
                           //her şey null ise true gelir.
 
-                          _authService.signIn(userName.text, userPassword.text).then((value) {
+                          _authService.signIn(userEmail.text, userPassword.text).then((value) {
                             Navigator.push(context, MaterialPageRoute(builder: (context) => const KategorilerView()));
                           });
 
