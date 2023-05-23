@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:yemek_app/services/auth.dart';
 import 'package:yemek_app/view/kategorilerview.dart';
 import 'package:yemek_app/view/registerview.dart';
 import 'package:yemek_app/view/userinfoview.dart';
@@ -10,8 +13,11 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
+
 }
 
 class MyApp extends StatelessWidget {
@@ -43,9 +49,19 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+
+
+
+
   var  formKey = GlobalKey<FormState>();
   var userName = TextEditingController();
   var userPassword = TextEditingController();
+
+  AuthService _authService = AuthService();
+
+
+
+
 
 
 
@@ -96,7 +112,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 title: const Text("Kullanıcı Bilgileri"),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => UserInfo()));
+                 // Navigator.push(context, MaterialPageRoute(builder: (context) => UserInfo()));
+               //   Navigator.push(context, MaterialPageRoute(builder: (context) => UserInfo())) ;
 
 
                 },
@@ -151,18 +168,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
                           border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20.0)))),
                       validator: (input){
-                        if (input!.isEmpty) {
-                          return "Parola giriniz " ;
+                       // if (input!.isEmpty) {
+                         // return "Parola giriniz " ;
 
-                        }
-                        if ( input.length < 6 ) {
-                          return "Şifre 6 haneden küçük olamaz" ;
-                        }
-                        if ( input != "123456") {
-                          return "Yanlış şifre" ;
+                       // }
+                      //  if ( input.length < 6 ) {
+                        //  return "Şifre 6 haneden küçük olamaz" ;
+                       // }
+                       // if ( input != "123456") {
+                         // return "Yanlış şifre" ;
 
-                        }
-                        return null ;
+                       // }
+                       // return null ;
 
 
                       },
@@ -185,12 +202,17 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         onPressed: () {
                           //her şey null ise true gelir.
-                          bool controllerResult = formKey.currentState!.validate();
-                          if ( controllerResult ) {
 
+                          _authService.signIn(userName.text, userPassword.text).then((value) {
                             Navigator.push(context, MaterialPageRoute(builder: (context) => const KategorilerView()));
+                          });
 
-                          }
+                        //  bool controllerResult = formKey.currentState!.validate();
+                        //  if ( controllerResult ) {
+
+
+
+                         // }
 
                         },
 

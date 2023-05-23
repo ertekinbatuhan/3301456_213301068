@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:yemek_app/services/auth.dart';
+import 'package:yemek_app/view/main.dart';
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -11,6 +14,11 @@ class _RegisterState extends State<Register> {
   var  formKey = GlobalKey<FormState>();
   var userEmail = TextEditingController();
   var userPassword = TextEditingController();
+
+  AuthService _authService = AuthService() ;
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +72,11 @@ class _RegisterState extends State<Register> {
 
 
                       onPressed: () {
+                        _authService.createPerson(userEmail.text, userPassword.text).then((value) {
+                          return Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp())) ;
+
+                        });
+                        //Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp())) ;
 
                       },
                     ),
@@ -82,4 +95,5 @@ class _RegisterState extends State<Register> {
     );
 
   }
+
 }
