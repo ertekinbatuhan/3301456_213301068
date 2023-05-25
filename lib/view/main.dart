@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:yemek_app/provider/file_operations.dart';
 import 'package:yemek_app/services/auth.dart';
 import 'package:yemek_app/view/kategorilerview.dart';
 
@@ -282,6 +283,24 @@ class _MyHomePageState extends State<MyHomePage> {
 
                         },
                       ),
+                    ),
+                  ),
+                  SizedBox(width: 300,
+                    child: ElevatedButton.icon(
+                      label: const Text("Dosya Oku"),
+                      icon: const Icon(Icons.mark_chat_read),
+                      style: ElevatedButton.styleFrom(
+                          shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(20.0))
+                          )
+                      ),
+
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => FileOperationsScreen()));
+
+
+
+                      },
                     ),
                   )
 
