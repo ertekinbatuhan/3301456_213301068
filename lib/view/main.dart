@@ -3,10 +3,15 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:yemek_app/services/auth.dart';
 import 'package:yemek_app/view/kategorilerview.dart';
+
 import 'package:yemek_app/view/registerview.dart';
+
+
 import 'package:yemek_app/view/userinfoview.dart';
 
 
+
+import 'firabaseview.dart';
 import 'addview.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -31,7 +36,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: const MyHomePage(title: 'Hoşgeldiniz'),
+      home:
+     // StatusListPage()
+     // Products()
+
+     const MyHomePage(title: 'Hoşgeldiniz'),
     );
   }
 }
@@ -113,7 +122,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 title: const Text("Kullanıcı Bilgileri"),
                 onTap: () {
                  // Navigator.push(context, MaterialPageRoute(builder: (context) => UserInfo()));
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => UserInfoo())) ;
+                  //Navigator.push(context, MaterialPageRoute(builder: (context) => UserInfoo())) ;
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => FirebaseListPage())) ;
 
 
                 },
@@ -234,7 +244,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           )
                       ),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => const Register()));
+
+
+                       // Navigator.push(context, MaterialPageRoute(builder: (context) => const XdPage()));
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => const Register()));
                        // ScaffoldMessenger.of(context).showSnackBar(
                           // const SnackBar(content: Text("Kayıt ol butonu daha sonra aktif olacak."))
 

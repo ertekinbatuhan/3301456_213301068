@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:yemek_app/model/userinfo.dart';
+import 'package:yemek_app/services/firestore.dart';
 
 
 import 'main.dart';
 
 class Adduserinfo extends StatefulWidget {
+
+
+
+
+
+
 
 
 
@@ -19,6 +27,8 @@ class _AdduserinfoState extends State<Adduserinfo> {
   var customerSurname = TextEditingController();
   var customerAddress = TextEditingController();
   var customerKey = GlobalKey<ScaffoldState>();
+  FireStoreService _statusService  = FireStoreService();
+
 
   Future<void> girisKontrol() async {
 
@@ -118,7 +128,10 @@ class _AdduserinfoState extends State<Adduserinfo> {
                     )
                 ),
                 onPressed: () {
-                  girisKontrol();
+                  _statusService.addData(customerName.text, customerSurname.text, customerAddress.text);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const MyApp()));
+
+                 // girisKontrol();
 
 
 

@@ -1,7 +1,14 @@
 
 
+
+
+
 import 'package:flutter/material.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'package:yemek_app/services/firestore.dart';
+
 
 class UserInfoo extends StatefulWidget {
   const UserInfoo({Key? key}) : super(key: key);
@@ -11,6 +18,8 @@ class UserInfoo extends StatefulWidget {
 }
 
 class _UserInfooState extends State<UserInfoo> {
+
+ 
 
   late String getName;
   late String getAddress;
@@ -41,14 +50,27 @@ class _UserInfooState extends State<UserInfoo> {
 
 
 
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Kullanıcı Bilgileri"),
-
+        title: Text("Kullanıcı Bilgileri")
       ),
-      body: Column( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      body:
+
+
+
+
+
+      // body:
+
+
+
+
+
+      Column( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Center(child: Text("İsim : $getName",style: const TextStyle(
               color: Colors.purple,
@@ -65,7 +87,11 @@ class _UserInfooState extends State<UserInfoo> {
         ],
 
       ),
+
+
     );
+
+
 
   }
 }
