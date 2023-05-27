@@ -4,7 +4,8 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:yemek_app/model/userinfo.dart';
+
+import 'package:yemek_app/kullan%C4%B1lmayanlar/userinfo.dart';
 
 class FireStoreService {
 
@@ -45,11 +46,42 @@ class FireStoreService {
 
        return ref ;
 
+    }
+
+ /* Stream<Posts> getUserPostsAsStream(String userId) {
+    final userSnapshot = _firestore
+        .doc(userId)
+        .snapshots()
+        .map((event) => Posts.fromJson(event.data()!));
+
+    return userSnapshot;
+  }
+
+  */
+
+
+
+   Stream<List<UsersInfo>> getUsersInfo() {
+       return _firestore.collection('UsersInfo').snapshots().map((snapshot) =>  snapshot
+           .docs.map((document) => UsersInfo.fromFirestore(document.data())).toList()) ;
+
+   }
+
+
+
+
+     Stream<QuerySnapshot<Map<String, dynamic>>> getDataa() {
+       var ref = _firestore.collection("UserInfo").snapshots();
+
+       return ref ;
+
      }
 
 
 
-     // Veri silme
+
+
+  // Veri silme
 
     Future<void> removeData(String Id) {
    var ref = _firestore.collection("UserInfo").doc(Id).delete() ;

@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:yemek_app/services/firestore.dart';
+import 'package:yemek_app/kullan%C4%B1lmayanlar/firestore.dart';
 
 
 class UserInfoo extends StatefulWidget {

@@ -1,8 +1,16 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+
+
+
+import 'package:yemek_app/json/homepage.dart';
+
 import 'package:yemek_app/provider/file_operations.dart';
 import 'package:yemek_app/services/auth.dart';
+
+
 import 'package:yemek_app/view/kategorilerview.dart';
 
 import 'package:yemek_app/view/registerview.dart';
@@ -12,7 +20,8 @@ import 'package:yemek_app/view/userinfoview.dart';
 
 
 
-import 'firabaseview.dart';
+import '../firestore/homepage.dart';
+import '../kullanılmayanlar/firabaseview.dart';
 import 'addview.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -38,10 +47,19 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.orange,
       ),
       home:
+
+
+     // FireStoreHomePage()
+     // HomePage()
+
+     // Testing()
+
+      // DomainFirmsView()
      // StatusListPage()
      // Products()
 
-     const MyHomePage(title: 'Hoşgeldiniz'),
+
+    MyHomePage(title: 'Hoşgeldiniz'),
     );
   }
 }
@@ -58,6 +76,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+
+
 
 
 
@@ -118,17 +139,34 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               ListTile(
                 leading: const CircleAvatar(
-                  backgroundImage: AssetImage("icons/add.png"),
+                  backgroundImage: AssetImage("icons/firebase.png"),
                 ),
-                title: const Text("Kullanıcı Bilgileri"),
+                title: const Text("FireStore CRUD"),
                 onTap: () {
                  // Navigator.push(context, MaterialPageRoute(builder: (context) => UserInfo()));
                   //Navigator.push(context, MaterialPageRoute(builder: (context) => UserInfoo())) ;
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => FirebaseListPage())) ;
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => FireStoreHomePage())) ;
+
+
+
+                },
+              ),
+              ListTile(
+                leading: const CircleAvatar(
+                  backgroundImage: AssetImage("icons/iletisim.png"),
+                ),
+                title: const Text("İletişim"),
+                onTap: () {
+                  // Navigator.push(context, MaterialPageRoute(builder: (context) => UserInfo()));
+                  //Navigator.push(context, MaterialPageRoute(builder: (context) => UserInfoo())) ;
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage())) ;
+
 
 
                 },
               )
+
+
 
             ],
           ),
@@ -264,7 +302,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                     ),
                   ),
-                  Padding(
+                 /* Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: SizedBox(width: 300,
                       child: ElevatedButton.icon(
@@ -285,22 +323,27 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 300,
-                    child: ElevatedButton.icon(
-                      label: const Text("Dosya Oku"),
-                      icon: const Icon(Icons.mark_chat_read),
-                      style: ElevatedButton.styleFrom(
-                          shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(20.0))
-                          )
+
+                  */
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: SizedBox(width: 300,
+                      child: ElevatedButton.icon(
+                        label: const Text("Dosya Oku"),
+                        icon: const Icon(Icons.mark_chat_read),
+                        style: ElevatedButton.styleFrom(
+                            shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(Radius.circular(20.0))
+                            )
+                        ),
+
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => FileOperationsScreen()));
+
+
+
+                        },
                       ),
-
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => FileOperationsScreen()));
-
-
-
-                      },
                     ),
                   )
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:yemek_app/model/userinfo.dart';
-import 'package:yemek_app/services/firestore.dart';
+
+import 'package:yemek_app/kullan%C4%B1lmayanlar/firestore.dart';
 
 
 import 'main.dart';
@@ -124,7 +124,7 @@ class _AdduserinfoState extends State<Adduserinfo> {
                 child: const Text("Kaydet"),
                 style: ElevatedButton.styleFrom(
                     shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10.0))
+                        borderRadius: BorderRadius.all(Radius.circular(20.0))
                     )
                 ),
                 onPressed: () {

@@ -1,7 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:yemek_app/services/firestore.dart';
+import 'package:yemek_app/kullan%C4%B1lmayanlar/userinfo.dart';
+import 'package:yemek_app/kullan%C4%B1lmayanlar/firestore.dart';
+
+
+
 
 class FirebaseListPage extends StatefulWidget {
   @override
@@ -15,10 +19,14 @@ class _FirebaseListPageState extends State<FirebaseListPage> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
 
+   // List<UsersInfo> myList = [] ;
+
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Kullanıcı Bilgileri"),
       ),
+
       body: StreamBuilder<QuerySnapshot>(
         stream: _fireStoreService.getData(),
         builder: (context, snaphot) {
@@ -28,6 +36,11 @@ class _FirebaseListPageState extends State<FirebaseListPage> {
               itemCount: snaphot.data!.docs.length,
               itemBuilder: (context, index) {
                 DocumentSnapshot myData = snaphot.data!.docs[index];
+
+               // final userInfo = UsersInfo(id: myData['id'], name: myData['name'], surName: myData['surName'], address: myData['address']);
+               // myList.add(userInfo);
+
+
 
                 Future<void> _showChoiseDialog(BuildContext context) {
                   return showDialog(
@@ -66,6 +79,7 @@ class _FirebaseListPageState extends State<FirebaseListPage> {
                                     GestureDetector(
                                       onTap: () {
                                         Navigator.pop(context);
+                                     // Navigator.push(context, MaterialPageRoute(builder: (context) => batuhanTest(usersList: myList,)));
                                       },
                                       child: const Text(
                                         "Vazgeç",

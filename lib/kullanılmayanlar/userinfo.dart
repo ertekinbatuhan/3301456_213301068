@@ -24,5 +24,20 @@ class UsersInfo{
     );
 
     }
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'name': name,
+      'surName': surName,
+      'address': address,
+
+    };
+  }
+
+
+  UsersInfo.fromFirestore(Map<String, dynamic> firestore) : id = firestore["id"],
+  name = firestore['name'],
+  surName = firestore['surName'],
+  address = firestore['address'];
 
   }
