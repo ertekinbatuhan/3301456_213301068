@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Personel Listesi'),
+        title: Text('Personel İletişim'),
         backgroundColor: Colors.orange,
       ),
       body: Center(

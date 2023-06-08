@@ -5,7 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:yemek_app/firestore/usermodel.dart';
 
-import 'homepage.dart';
+import 'homeview.dart';
 
 
 class UpdateInfo extends StatelessWidget {

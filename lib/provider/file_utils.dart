@@ -6,6 +6,7 @@ class FileUtils {
   static Future<String> get getFilePath async {
     final directory = await getApplicationDocumentsDirectory();
     return directory.path;
+    
   }
 
   static Future<File> get getFile async {

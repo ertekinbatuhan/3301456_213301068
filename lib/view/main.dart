@@ -1,11 +1,11 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:yemek_app/animation/home_view.dart';
 
 
 
-import 'package:yemek_app/json/homepage.dart';
+import 'package:yemek_app/json/homeview.dart';
 
 import 'package:yemek_app/provider/file_operations.dart';
 import 'package:yemek_app/services/auth.dart';
@@ -16,13 +16,13 @@ import 'package:yemek_app/view/kategorilerview.dart';
 import 'package:yemek_app/view/registerview.dart';
 
 
-import 'package:yemek_app/view/userinfoview.dart';
 
 
 
-import '../firestore/homepage.dart';
-import '../kullanılmayanlar/firabaseview.dart';
-import 'addview.dart';
+
+import '../firestore/homeview.dart';
+
+
 import 'package:google_fonts/google_fonts.dart';
 
 
@@ -137,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 title: Text("E-mail"),
                 subtitle: Text("batuhanertekinn@gmail.com",style: TextStyle(color: Colors.black),),
               ),
-              ListTile(
+          /*    ListTile(
                 leading: const CircleAvatar(
                   backgroundImage: AssetImage("icons/firebase.png"),
                 ),
@@ -151,6 +151,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
                 },
               ),
+
+           */
+
+
               ListTile(
                 leading: const CircleAvatar(
                   backgroundImage: AssetImage("icons/iletisim.png"),
@@ -160,6 +164,19 @@ class _MyHomePageState extends State<MyHomePage> {
                   // Navigator.push(context, MaterialPageRoute(builder: (context) => UserInfo()));
                   //Navigator.push(context, MaterialPageRoute(builder: (context) => UserInfoo())) ;
                   Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage())) ;
+
+
+
+                },
+              ),
+              ListTile(
+                leading: const CircleAvatar(
+                  backgroundImage: AssetImage("icons/coksatanlar.png"),
+                ),
+                title: const Text("Çok Satanlar"),
+                onTap: () {
+
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ChartHomePage())) ;
 
 
 
@@ -190,7 +207,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       decoration:  const InputDecoration(hintText: "E posta giriniz" ,
                           prefixIcon: Icon(Icons.account_circle),
                           filled: true ,
-                          border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20.0)))),
+                          border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(10.0)))),
                       validator: (input){
 
                       //  if (input!.isEmpty) {
@@ -215,7 +232,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           prefixIcon: Icon(Icons.lock),
                           filled: true,
 
-                          border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20.0)))),
+                          border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(10.0)))),
                       validator: (input){
                        // if (input!.isEmpty) {
                          // return "Parola giriniz " ;
@@ -302,12 +319,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
                     ),
                   ),
-                 /* Padding(
+                  Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: SizedBox(width: 300,
                       child: ElevatedButton.icon(
-                        label: const Text("Bilgi Ekle"),
-                        icon: const Icon(Icons.add),
+                        label: const Text("Memnuniyet"),
+                        icon: const Icon(Icons.mark_email_read),
                         style: ElevatedButton.styleFrom(
                             shape: const RoundedRectangleBorder(
                                 borderRadius: BorderRadius.all(Radius.circular(20.0))
@@ -315,7 +332,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
 
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => Adduserinfo()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => FireStoreHomePage()));
 
 
 
@@ -324,26 +341,23 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
 
-                  */
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: SizedBox(width: 300,
-                      child: ElevatedButton.icon(
-                        label: const Text("Dosya Oku"),
-                        icon: const Icon(Icons.mark_chat_read),
-                        style: ElevatedButton.styleFrom(
-                            shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(20.0))
-                            )
-                        ),
 
-                        onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => FileOperationsScreen()));
-
-
-
-                        },
+                  SizedBox(width: 300,
+                    child: ElevatedButton.icon(
+                      label: const Text("Dosya Oku"),
+                      icon: const Icon(Icons.mark_chat_read),
+                      style: ElevatedButton.styleFrom(
+                          shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(20.0))
+                          )
                       ),
+
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => FileOperationsScreen()));
+
+
+
+                      },
                     ),
                   )
 

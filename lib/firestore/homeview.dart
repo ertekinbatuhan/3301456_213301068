@@ -15,7 +15,7 @@ class FireStoreHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Firestore CRUD'),
+          title: const Text('Verilen Puanlar'),
           centerTitle: true,
         ),
         body: FutureBuilder<QuerySnapshot>(

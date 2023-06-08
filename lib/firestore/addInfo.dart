@@ -6,7 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:yemek_app/firestore/usermodel.dart';
 
-import 'homepage.dart';
+import 'homeview.dart';
 
 
 
@@ -50,7 +50,7 @@ class _AddInfoState extends State<AddInfo> {
                 SizedBox( width: 120,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
+                      shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(5.0))
                       )
                     ),
@@ -122,9 +122,9 @@ class _AddInfoState extends State<AddInfo> {
     infoRef.set(data).whenComplete(() {
       //
 
+        Navigator.push(context, MaterialPageRoute(builder: (context) => FireStoreHomePage()));
 
-
-      Navigator.pushAndRemoveUntil(
+   /*   Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
           builder: (context) => FireStoreHomePage(),
@@ -132,6 +132,8 @@ class _AddInfoState extends State<AddInfo> {
             (route) => false,
 
       );
+
+    */
 
       //
     });
