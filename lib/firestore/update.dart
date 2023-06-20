@@ -27,7 +27,7 @@ class UpdateInfo extends StatelessWidget {
    pointController.text = '${userInfo.marks}';
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bilgi Güncelle'),
+        title: const Text('Puan Güncelle'),
         centerTitle: true,
       ),
       body: SingleChildScrollView(

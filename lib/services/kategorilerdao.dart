@@ -10,7 +10,7 @@ class KategorilerDao{
 
 
     var dataBase = await DatabaseHelper.databaseAccess() ;
-
+    // verileri alıyoruz sorgu ile
     List<Map<String,dynamic>> maps = await  dataBase.rawQuery("SELECT * FROM kategoriler") ;
 
 

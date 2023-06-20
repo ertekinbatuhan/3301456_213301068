@@ -27,7 +27,7 @@ class _AddInfoState extends State<AddInfo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Memnuniyet'),
+        title: const Text('Puan Ver'),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
