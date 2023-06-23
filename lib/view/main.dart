@@ -84,6 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 
+
   var  formKey = GlobalKey<FormState>();
   var userEmail = TextEditingController();
   var userPassword = TextEditingController();
@@ -323,7 +324,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: const EdgeInsets.all(10.0),
                     child: SizedBox(width: 300,
                       child: ElevatedButton.icon(
-                        label: const Text("Memnuniyet"),
+                        label: const Text("Puanlar"),
                         icon: const Icon(Icons.mark_email_read),
                         style: ElevatedButton.styleFrom(
                             shape: const RoundedRectangleBorder(

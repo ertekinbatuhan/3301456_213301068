@@ -1,5 +1,8 @@
 import 'dart:convert';
 
+//Veri çekiyoruz
+
+
 Personal personalFromJson(String str) => Personal.fromJson(json.decode(str));
 
 String personalToJson(Personal data) => json.encode(data.toJson());

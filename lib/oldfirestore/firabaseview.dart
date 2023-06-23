@@ -1,8 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:yemek_app/kullan%C4%B1lmayanlar/userinfo.dart';
-import 'package:yemek_app/kullan%C4%B1lmayanlar/firestore.dart';
+
+
+import 'firestore.dart';
 
 
 

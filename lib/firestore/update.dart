@@ -10,7 +10,7 @@ import 'homeview.dart';
 
 class UpdateInfo extends StatelessWidget {
   final UserInfo userInfo;
-  final TextEditingController rollController = TextEditingController();
+  final TextEditingController surnameController = TextEditingController();
 
   final TextEditingController nameController = TextEditingController();
 
@@ -22,7 +22,7 @@ class UpdateInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    rollController.text = '${userInfo.surName}';
+    surnameController.text = '${userInfo.surName}';
     nameController.text = userInfo.name;
    pointController.text = '${userInfo.marks}';
     return Scaffold(
@@ -38,7 +38,7 @@ class UpdateInfo extends StatelessWidget {
                 focusNode: focusNode,
                 hintText: 'Name',
                 textInputType: TextInputType.number,
-                controller: rollController),
+                controller: surnameController),
             getMyField(hintText: 'SurName', controller: nameController),
             getMyField(
                 hintText: 'point',
@@ -54,7 +54,7 @@ class UpdateInfo extends StatelessWidget {
 
                         UserInfo updatedInfo = UserInfo(
                           id: userInfo.id,
-                          surName: rollController.text,
+                          surName: surnameController.text,
                           name: nameController.text,
                          marks: double.parse(pointController.text),
                         );
@@ -82,7 +82,7 @@ class UpdateInfo extends StatelessWidget {
                           backgroundColor: Colors.blueGrey),
                       onPressed: () {
                         //
-                        rollController.text = '';
+                        surnameController.text = '';
                         nameController.text = '';
                         pointController.text = '';
                         focusNode.requestFocus();
