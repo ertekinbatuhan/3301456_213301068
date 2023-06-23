@@ -4,7 +4,7 @@
 
 
 
-Kullanılan Kütüphaneler :
+Kullanılan Paketler :
 
   shared_preferences: ^2.0.11
   
