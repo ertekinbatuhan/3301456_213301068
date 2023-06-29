@@ -4,7 +4,7 @@
 
 
 
-Kullanılan Paketler :
+Used packages :
 
   shared_preferences: ^2.0.11
   
